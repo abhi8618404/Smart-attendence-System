@@ -1,6 +1,7 @@
 # 🎓 Smart Attendance System (Face Recognition)
 
-A real-time **Face Recognition-based Attendance System** developed in **Python**, **OpenCV**, and **Tkinter GUI**. This project automates attendance marking by capturing faces via webcam, recognizing users based on a trained model, and logging attendance in `.csv` files.
+A **real-time Face Recognition-based Attendance System** developed in **Python**, **OpenCV**, and **Tkinter GUI**.  
+This project automates attendance marking by capturing faces via webcam, recognizing users based on a trained model, and logging attendance in `.csv` files.
 
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
 [![OpenCV](https://img.shields.io/badge/Library-OpenCV-red?style=for-the-badge&logo=opencv&logoColor=white)](https://opencv.org/)
@@ -9,104 +10,96 @@ A real-time **Face Recognition-based Attendance System** developed in **Python**
 
 ## 🚀 Features
 
-- 📷 Register new users by capturing facial images  
-- 🧠 Train face recognition model (LBPH algorithm)  
-- 🤖 Recognize faces from webcam feed  
-- 🗓️ Auto-log attendance with timestamp  
-- 📂 Save attendance in `Attendance_<subject>_<date>.csv`  
-- 📊 View attendance records through GUI
+- 📷 Register new users by capturing facial images.  
+- 🧠 Train face recognition model (**LBPH algorithm**).  
+- 🤖 Recognize faces from webcam feed in real time.  
+- 🗓️ Auto-log attendance with timestamps.  
+- 📂 Save attendance in `Attendance_<subject>_<date>.csv`.  
+- 📊 View attendance records via GUI.
 
 ---
 
 ## 🔧 Setup & Usage
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/abhi8618404/Smart-attendence-System.git
-   cd Smart-attendence-System
-Install dependencies
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/abhi8618404/Smart-attendence-System.git
+cd Smart-attendence-System
+```
 
-bash
-Copy
-Edit
+### 2️⃣ Install dependencies
+```bash
 pip install -r requirements.txt
-Create storage folder
+```
 
-bash
-Copy
-Edit
+### 3️⃣ Create storage folder
+```bash
 mkdir TrainingImage
-Adjust file paths
+```
 
-Open .py files (e.g. attendance.py, automaticAttendance.py), update any local paths to match your environment.
+### 4️⃣ Adjust file paths
+Open `.py` files (e.g., `attendance.py`, `automaticAttendance.py`) and update any local paths to match your environment.
 
-Start the application
-
-bash
-Copy
-Edit
+### 5️⃣ Start the application
+```bash
 python attendance.py
-💡 How It Works
-The system follows this simple flow:
+```
 
-Register User
+---
 
-Enter ID & name → webcam captures ~50 face images
+## 💡 How It Works
 
-Images are stored in TrainingImage/ID_Name/
+1. **Register User**  
+   - Enter ID & Name → Webcam captures ~50 face images.  
+   - Images stored in `TrainingImage/ID_Name/`.
 
-Train Model
+2. **Train Model**  
+   - Encodes stored images → Generates recognition model.  
+   - Model saved as `Trainer.yml`.
 
-Encode stored images → generate face recognition model
+3. **Mark Attendance**  
+   - Run `automaticAttendance.py` → Enter subject name.  
+   - Recognized faces logged in `Attendance_<subject>_<date>.csv`.
 
-Model saved as Trainer.yml
+4. **View Records**  
+   - Use GUI to select & display any `.csv` attendance file.
 
-Mark Attendance
+---
 
-Run automaticAttendance.py → enter subject name
-
-Real-time face recognition logs attendance to Attendance_<subject>_<date>.csv
-
-View Records
-
-Use GUI to select and display any .csv attendance file
-
-📁 Directory Structure
-bash
-Copy
-Edit
+## 📁 Directory Structure
+```
 Smart-attendence-System/
-├── attendance.py              # GUI & registration logic
-├── automaticAttendance.py    # Real-time attendance capture
-├── trainImages.py            # Train face recognition model
-├── TrainingImage/            # Captured user faces
+├── attendance.py            # GUI & registration logic
+├── automaticAttendance.py   # Real-time attendance capture
+├── trainImages.py           # Train face recognition model
+├── TrainingImage/           # Captured user faces
 ├── requirements.txt
 └── README.md
-📸 Sample Screenshots
-(Replace these with your own images)
+```
 
-Main GUI
+---
 
-Registering a user
+## 📸 Sample Screenshots
+*(Replace with your own images)*  
+- Main GUI  
+- Registering a user  
+- Live attendance being recorded  
+- Viewing attendance CSV  
 
-Live attendance being recorded
+---
 
-Viewing attendance CSV
+## 📦 Tech Stack
 
-📦 Tech Stack
-Python 3
+- **Python 3**  
+- **OpenCV** – Face detection & recognition (LBPH)  
+- **Tkinter** – GUI interface  
+- **NumPy / Pandas** – Image processing & CSV handling  
 
-OpenCV – for face detection + recognition (LBPH)
+---
 
-Tkinter – GUI interface
+## 🔮 Future Improvements
 
-NumPy / Pandas – image processing & CSV handling
-
-🔮 Future Improvements
-Migrate from CSV to SQLite/MySQL
-
-Add user authentication (admin vs student login)
-
-Export attendance data as PDF
-
-Enhance recognition accuracy with deep learning models
+- Switch from CSV to **SQLite/MySQL** for better storage.  
+- Add **user authentication** (admin vs student login).  
+- Export attendance data as **PDF**.  
+- Improve accuracy with **deep learning models**.
